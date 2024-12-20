@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor d'Àudio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="music-notes-container"></div>
+
+    <!-- Contenedor del reproductor -->
+    <div class="audio-player">
+        <audio id="audio" src="audio/cold-sad-pianos-150019.mp3" preload="auto"></audio>
+
+        <!-- Botón de Play/Stop -->
+        <div class="play-stop-wrapper">
+            <svg id="play-stop-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="button-svg">
+                <circle cx="50" cy="50" r="45" fill="url(#gradient)" stroke="black" stroke-width="3"></circle>
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ff00fb;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#86140c;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <polygon id="play-icon" points="40,30 70,50 40,70" fill="white"></polygon>
+                <g id="pause-icon" style="display:none;">
+                    <rect x="35" y="30" width="10" height="40" fill="white"></rect>
+                    <rect x="55" y="30" width="10" height="40" fill="white"></rect>
+                </g>
+            </svg>
+        </div>
+
+        <div class="slider">
+            <label for="volume-slider">Volum:</label>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
